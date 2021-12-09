@@ -1,0 +1,16 @@
+COMM Demo Bandit Script
+COMM Bandit: v0.1.1
+COMM Author: dcobb
+COMM Opens web browser and navigates to Google.COMM
+
+HOTK command space
+WAIT 1500
+TYPE safari.app
+WAIT 1000
+SEND enter
+WAIT 2000
+TYPE google.com
+SEND enter
+WAIT 1000
+GRAB test-saf.png
+EXIT
