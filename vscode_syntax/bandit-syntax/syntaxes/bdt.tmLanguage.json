@@ -1,0 +1,80 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Bandit",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#constants"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "entity.name.type.bdt",
+					"match": "\\b(EQ|NOTEQ|INCLUDES|EXCLUDES)\\b"
+				},
+				{
+					"name": "keyword.control.less.bdt",
+					"match": "\\b(EXEC|WAIT|HOTK|SEND|GRAB|TYPE|EXIT|IFEL|SECT)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.bdt",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.bdt",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.bdt",
+					"begin": "COMM",
+					"end": "\n"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.bdt",
+					"match": "\\[.+\\](\\s)"
+				},
+				{
+					"name": "entity.name.function.bdt",
+					"match": "\\[.+\\]"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "entity.name.type",
+					"match": "(MOVE)"
+				},
+				{
+					"name": "constant.character.bdt",
+					"match": "(;;)"
+				}
+			]
+		}
+	},
+	"scopeName": "source.bdt"
+}
