@@ -1,0 +1,31 @@
+COMM ################################################################
+COMM payload_date.bdt
+COMM DESC: The output of this script will vary based on day of year
+COMM AUTHOR: DCobb
+
+COMM RUNS ON: Mac 
+COMM VERSION: bandit v1.0.0
+COMM ################################################################
+
+COMM Run if today is 12-13
+IFEL [date +%m-%d] EQ [12-13];; MOVE nottoday
+HOTK command space
+WAIT 200
+TYPE textEdit.app
+SEND enter
+TYPE Today is 12-13 do something special!
+SECT nottoday
+
+
+COMM Run if today is not 12-13
+IFEL [date +%m-%d] NOTEQ [12-13];; MOVE nottoday
+HOTK command space
+WAIT 200
+TYPE textEdit.app
+SEND enter
+TYPE Today is NOT 12-13 boooooooo!
+SECT nottoday
+
+
+COMM Anything below here will run no matter the date
+EXIT

@@ -1,0 +1,16 @@
+COMM Demo Bandit Script
+COMM Bandit: v0.1.1
+COMM Author: dcobb
+
+EXEC ls -la
+WAIT 5000
+EXEC echo "hello world"
+COMM create a new file
+EXEC touch somefile.txt
+HOTK command space
+WAIT 1500
+TYPE hello world
+WAIT 2000
+GRAB test.png
+WAIT 1000
+EXIT
