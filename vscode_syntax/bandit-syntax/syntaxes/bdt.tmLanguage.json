@@ -71,7 +71,7 @@
 				},
 				{
 					"name": "constant.character.bdt",
-					"match": "(;;)"
+					"match": "(;;|#)"
 				}
 			]
 		}
